@@ -17,9 +17,9 @@ public class HapticsPackage implements ReactPackage {
     }
 
     // Deprecated from RN 0.47 ???
-    // public List<Class<? extends JavaScriptModule>> createJSModules() {
-    //   return Collections.emptyList();
-    // }
+    public List<Class<? extends JavaScriptModule>> createJSModules() {
+      return Collections.emptyList();
+    }
 
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {

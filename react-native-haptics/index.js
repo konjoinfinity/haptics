@@ -28,4 +28,6 @@ const createTriggerOptions = options => {
     }
 }
 
+NativeModules.Haptics.trigger("selection", { enableVibrateFallback: false, ignoreAndroidSystemSettings: false }, () => { console.log("success") })
+
 export default Haptics;

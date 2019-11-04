@@ -1,5 +1,5 @@
 declare module "react-native-haptics" {
-    type HapticFeedbackTypes =
+    type HapticTypes =
         | "selection"
         | "impactLight"
         | "impactMedium"
@@ -13,5 +13,5 @@ declare module "react-native-haptics" {
         ignoreAndroidSystemSettings?: boolean;
     }
 
-    function trigger(type: HapticFeedbackTypes, options?: HapticOptions): void;
+    function trigger(type: HapticTypes, options?: HapticOptions): void;
 }
