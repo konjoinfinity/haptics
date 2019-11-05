@@ -4,6 +4,7 @@ declare module "react-native-haptics" {
         | "impactLight"
         | "impactMedium"
         | "impactHeavy"
+        | "notification"
         | "notificationSuccess"
         | "notificationWarning"
         | "notificationError";
