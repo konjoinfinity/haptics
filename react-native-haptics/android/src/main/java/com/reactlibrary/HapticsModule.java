@@ -27,19 +27,24 @@ public class HapticsModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-  public void trigger(String type, ReadableMap options) {
+    // , ReadableMap options
+  public void trigger(String type) {
     // Check system settings, if disabled and we're not explicitly ignoring then return immediatly
-    boolean ignoreAndroidSystemSettings = options.getBoolean("ignoreAndroidSystemSettings");
+    // boolean ignoreAndroidSystemSettings = options.getBoolean("ignoreAndroidSystemSettings");
     int hapticEnabledAndroidSystemSettings = Settings.System.getInt(this.reactContext.getContentResolver(), Settings.System.HAPTIC_FEEDBACK_ENABLED, 0);
-    if (ignoreAndroidSystemSettings == false && hapticEnabledAndroidSystemSettings == 0) return;
+    // ignoreAndroidSystemSettings == false && 
+    if (hapticEnabledAndroidSystemSettings == 0) return;
 
     Vibrator v = (Vibrator) reactContext.getSystemService(Context.VIBRATOR_SERVICE);
     if (v == null) return;
     long durations[] = {0, 20};
 
     switch (type) {
-      case "impactLight":
+       case "selection":
         durations = new long[]{0, 20};
+        break;
+      case "impactLight":
+        durations = new long[]{0, 30};
         break;
       case "impactMedium":
         durations = new long[]{0, 40};
@@ -47,8 +52,11 @@ public class HapticsModule extends ReactContextBaseJavaModule {
       case "impactHeavy":
        durations = new long[]{0, 60};
         break;
+        case "notification":
+        durations = new long[]{0, 30, 10};
+        break;
       case "notificationSuccess":
-        durations = new long[]{0, 40 ,60, 20};
+        durations = new long[]{0, 40, 60, 20};
         break;
       case "notificationWarning":
         durations = new long[]{0, 20, 60, 40};

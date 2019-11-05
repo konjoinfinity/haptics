@@ -8,10 +8,11 @@ declare module "react-native-haptics" {
         | "notificationWarning"
         | "notificationError";
 
-    interface HapticOptions {
-        enableVibrateFallback?: boolean;
-        ignoreAndroidSystemSettings?: boolean;
-    }
+    // interface HapticOptions {
+    //     enableVibrateFallback?: boolean;
+    //     ignoreAndroidSystemSettings?: boolean;
+    // }
 
-    function trigger(type: HapticTypes, options?: HapticOptions): void;
+    //, options?: HapticOptions
+    function trigger(type: HapticTypes): void;
 }
