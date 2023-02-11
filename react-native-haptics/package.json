@@ -33,7 +33,7 @@
   "dependencies": {
     "braces": "^3.0.2",
     "mem": "^5.1.1",
-    "npm-check-updates": "^3.2.0",
+    "npm-check-updates": "^16.7.4",
     "ws": "^7.2.0"
   }
 }
